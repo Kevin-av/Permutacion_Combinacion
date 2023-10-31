@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .password-form {
+        display: grid;
+        grid-template-columns: 30%;
+        grid-template-rows: 1fr;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="password-form">
+      <label for="Ipass" max="9">Enter a password: </label>
+      <input id="Ipass" type="text" class="password" />
+
+      <label for="">Length of the password</label>
+      <input
+        type="range"
+        min="0"
+        max="18"
+        value="9"
+        class="range-input"
+        disabled="true"
+      />
+      <span class="range-number">9</span>
+      <button type="button" class="find-button">find password!</button>
+    </form>
+    <div class="message"></div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
