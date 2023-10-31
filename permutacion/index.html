@@ -1,12 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Introducir Números</title>
 </head>
 <body>
-    <script src="permutacion.js"></script>
+    <h2>En una reunion aparecierón una cierta cantidad de personas asistio, y hay una cierta cantidad de butacas que tienes para que las personas puedan sentarse, ¿De cuantas formas puede las personas sentarse en las butacas?</h2>
+    <h3>Introducir Números de las personas que asistieron a la reunión, y de las butacas disponibles.</h3>
+    <h5>Ingresa los datos:</h5>
 
+    <form id="numerosForm">
+        <label for="numero1">Personas:</label>
+        <input type="number" id="numero1" name="numero1" required><br>
+
+        <label for="numero2">Butacas:</label>
+        <input type="number" id="numero2" name="numero2" required><br>
+
+        <button type="button" onclick="calcularPermutacion()">Calcular Permutación</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularPermutacion() {
+            const numero1 = parseInt(document.getElementById('numero1').value, 10);
+            const numero2 = parseInt(document.getElementById('numero2').value, 10);
+
+            const permutacion = permutation(numero1, numero2);
+
+            document.getElementById('resultado').textContent = `Permutaciones de ${numero1} objetos tomados ${numero2} a la vez: ${permutacion}`;
+        }
+
+        function factorial(n) {
+            if (n === 0) return 1;
+            let result = 1;
+            for(let i = 1; i <= n; i++) {
+                result *= i;
+            }
+            return result;
+        }
+
+        function permutation(n, r) {
+            if(n < r) return 0;
+            return factorial(n) / factorial(n - r);
+        }
+    </script>
 </body>
 </html>
