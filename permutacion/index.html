@@ -20,29 +20,6 @@
 
     <p id="resultado"></p>
 
-    <script>
-        function calcularPermutacion() {
-            const numero1 = parseInt(document.getElementById('numero1').value, 10);
-            const numero2 = parseInt(document.getElementById('numero2').value, 10);
-
-            const permutacion = permutation(numero1, numero2);
-
-            document.getElementById('resultado').textContent = `Permutaciones de ${numero1} objetos tomados ${numero2} a la vez: ${permutacion}`;
-        }
-
-        function factorial(n) {
-            if (n === 0) return 1;
-            let result = 1;
-            for(let i = 1; i <= n; i++) {
-                result *= i;
-            }
-            return result;
-        }
-
-        function permutation(n, r) {
-            if(n < r) return 0;
-            return factorial(n) / factorial(n - r);
-        }
-    </script>
+    <script src="permutacion.js"></script>
 </body>
 </html>
