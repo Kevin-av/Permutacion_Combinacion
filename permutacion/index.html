@@ -2,23 +2,29 @@
 <html>
 <head>
     <title>Introducir Números</title>
+    <style>
+        #resultado{
+            display: grid;
+            grid-template-columns: repeat(10, 100px);
+        }
+    </style>
 </head>
 <body>
     <h2>En una reunion aparecierón una cierta cantidad de personas asistio, y hay una cierta cantidad de butacas que tienes para que las personas puedan sentarse, ¿De cuantas formas puede las personas sentarse en las butacas?</h2>
-    <h3>Introducir Números de las personas que asistieron a la reunión, y de las butacas disponibles.</h3>
+    <h3>Introducir Números de las personas que asistieron a la reunión, y de las butacas disponibles, para comenzar con la permutación.</h3>
     <h5>Ingresa los datos:</h5>
 
-    <form id="numerosForm">
-        <label for="numero1">Personas:</label>
-        <input type="number" id="numero1" name="numero1" required><br>
+    <label for="numero1">Personas:</label>
+    <input type="text" id="numero1">
+    <br>
 
-        <label for="numero2">Butacas:</label>
-        <input type="number" id="numero2" name="numero2" required><br>
+    <label for="numero2">Butacas:</label>
+    <input type="text" id="numero2">
+    <br>
 
-        <button type="button" onclick="calcularPermutacion()">Calcular Permutación</button>
-    </form>
+    <button onclick="calcularPermutaciones()">Calcular Permutaciones</button>
 
-    <p id="resultado"></p>
+    <div id="resultado"></div>
 
     <script src="permutacion.js"></script>
 </body>

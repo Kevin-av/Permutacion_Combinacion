@@ -1,27 +1,74 @@
 function calcularPermutacion() {
-    // Obtenemos los valores ingresados por el usuario desde elementos de entrada en el HTML.
     let numero1 = parseInt(document.getElementById('numero1').value, 10);
     let numero2 = parseInt(document.getElementById('numero2').value, 10);
 
-    // Calculamos la permutación y almacenamos el resultado.
     let permutacion = permutation(numero1, numero2);
 
-    // Mostramos el resultado en un elemento de texto en el HTML.
     document.getElementById('resultado').textContent = `Permutaciones de ${numero1} objetos tomados ${numero2} a la vez: ${permutacion}`;
 }
 
-// Esta función calcula el factorial de un número 'n'.
 function factorial(n) {
-    if (n === 0) return 1;  // El factorial de 0 es 1 por definición.
+    if (n === 0) return 1; 
     let result = 1;
     for (let i = 1; i <= n; i++) {
-        result *= i;  // Multiplicamos el resultado por cada número desde 1 hasta 'n'.
+        result *= i; 
     }
-    return result;  // Devolvemos el resultado del factorial.
+    return result; 
 }
 
-// Esta función calcula la permutación de 'n' objetos tomados 'r' a la vez.
 function permutation(n, r) {
-    if (n < r) return 0;  // Si 'n' es menor que 'r', la permutación es 0 (no es posible).
-    return factorial(n) / factorial(n - r);  // La fórmula de la permutación es n! / (n - r)!.
+    if (n < r) return 0; 
+    return factorial(n) / factorial(n - r);  
 }
+/*
+function calcularPermutaciones() {
+    let numero1 = parseInt(document.getElementById('numero1').value, 10);
+    let numero2 = parseInt(document.getElementById('numero2').value, 10);
+
+    let permutaciones = obtenerPermutaciones(numero1, numero2);
+    let resultado = '';
+
+    for (let i = 0; i < permutaciones.length; i++) {
+        resultado += `<div>${permutaciones[i]}\n</div>`;
+    }
+
+      document.getElementById('resultado').innerHTML = resultado;
+
+      document.getElementById('resultado').innerHTML += `Permutaciones de ${numero1} objetos tomados ${numero2} a la vez: ${permutation(numero1, numero2)}`;
+}
+
+function factorial(n) {
+    if (n === 0) return 1; 
+    let result = 1;
+    for (let i = 1; i <= n; i++) {
+        result *= i; 
+    }
+    return result; 
+}
+
+function permutation(n, r) {
+    if (n < r) return 0; 
+    return factorial(n) / factorial(n - r); 
+}
+
+function obtenerPermutaciones(n, r) {
+    if (n < r) return []; 
+
+    const numeros = Array.from({ length: n }, (_, i) => i + 1); 
+    const permutaciones = [];
+    permutacionRecursiva([], numeros, r, permutaciones);
+    return permutaciones;
+}
+
+function permutacionRecursiva(actual, disponibles, r, resultados) {
+    if (actual.length === r) {
+        resultados.push([...actual]); 
+        return;
+    }
+
+    for (let i = 0; i < disponibles.length; i++) {
+        const nuevoActual = [...actual, disponibles[i]];
+        const nuevosDisponibles = [...disponibles.slice(0, i), ...disponibles.slice(i + 1)];
+        permutacionRecursiva(nuevoActual, nuevosDisponibles, r, resultados);
+    }
+}*/
